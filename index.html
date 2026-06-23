@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakthrough - ካሪየርዎን እና ህይወትዎን ይለውጡ</title>
+    <style>
+        /* ከለር እና ፎንት ማስተካከያ */
+        :root {
+            --primary-color: #1e3a8a; /* ጥቁር ሰማያዊ (የእምነት እና ፕሮፌሽናሊዝም መግለጫ) */
+            --accent-color: #f59e0b;  /* ወርቃማ/ብጫ (የተስፋ እና የላቀ ስኬት መግለጫ) */
+            --text-color: #333333;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Header እና Navigation */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section (ዋናው ገጽ መግቢያ) */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        /* About Section (ስለ እኔ) */
+        .about {
+            padding: 80px 10%;
+            text-align: center;
+            background-color: var(--bg-light);
+        }
+
+        .about h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Services/Opportunity Section (የስራው እድል) */
+        .services {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section (መገናኛ ገጽ) */
+        .contact {
+            padding: 80px 10%;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* ለስልክ ስክሪን ማስተካከያ (Responsive) */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header ክፍል -->
+    <header>
+        <div class="logo">Break<span>through</span></div>
+        <nav>
+            <a href="#home">ዋና ገጽ</a>
+            <a href="#about">ስለ እኔ</a>
+            <a href="#opportunity">የስራው እድል</a>
+            <a href="#contact">ይገናኙን</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>ከ Breakthrough ጋር ህልምዎን እውን ያድርጉ!</h1>
+        <p>የግል ብቃትዎን የሚያሳድጉበት፣ የአመራር ክህሎትዎን የሚያዳብሩበት እና የገንዘብ ነጻነትዎን የሚያረጋግጡበት ታላቅ የህይወት እና የንግድ እድል።</p>
+        <a href="#contact" class="btn">አሁኑኑ ይጀምሩ</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>ከእኔ ጋር ለመስራት ለምን መረጡ?</h2>
+        <p>እኔ ከ Breakthrough ማህበረሰብ ጋር በመሆን ሰዎችን በማብቃት (Empowerment) ላይ እየሰራሁ እገኛለሁ። አላማዬ የእርስዎን እምቅ አቅም በማውጣት፣ በካሪየርዎ እና በግል ህይወትዎ ላይ ትርጉም ያለው ለውጥ እንዲያመጡ በቅርበት መደገፍ እና አብሮ ማደግ ነው።</p>
+    </section>
+
+    <!-- Opportunity Section -->
+    <section class="services" id="opportunity">
+        <h2>የምናቀርባቸው ዋና ዋና እድሎች</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>1. የግል እድገት እና ስልጠና</h3>
+                <p>አስተሳሰብን የሚቀይሩ፣ በራስ መተማመንን የሚገነቡ እና ስኬታማ መሪ የሚያደርጉ አለምአቀፍ ደረጃቸውን የጠበቁ ስልጠናዎች።</p>
+            </div>
+            <div class="card">
+                <h3>2. የገቢ ምንጭ እና የንግድ እድል</h3>
+                <p>ከባዶ ተነስተው የራስዎን የንግድ ስራ የሚገነቡበት እና አስተማማኝ የገቢ ምንጭ የሚፈጥሩበት ስልታዊ አሰራር።</p>
+            </div>
+            <div class="card">
+                <h3>3. ጠንካራ ማህበረሰብ (Community)</h3>
+                <p>እርስ በእርስ የሚደጋገፉ፣ አዎንታዊ አስተሳሰብ ያላቸው እና ለውጥ የሚፈልጉ ሰዎችን ያቀፈ ታላቅ ቡድን።</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>የለውጡ አካል ለመሆን ዝግጁ ነዎት?</h2>
+        <p>አብረን የምንሰራበትን እና ህይወትዎን ወደ ላቀ ደረጃ የምናሸጋግርበትን መንገድ ለመወያየት አሁኑኑ ያግኙኝ!</p>
+        <div class="contact-info">
+            <p>በቴሌግራም ያናግሩኝ፡ <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">@YOUR_TELEGRAM_USERNAME</a></p>
+            <p>ስልክ፡ +251 9XX XX XX XX</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Breakthrough Opportunity. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
